@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+
+{% block main_content %}
+<style>
+    .checked {
+        color: orange;
+    }
+</style>
+
+<h1>My saved internships</h1>
+
+<table class="center">
+    <thead>
+        <tr>
+            <th class="tableheads">Company</th>
+            <th class="tableheads">Role</th>
+            <th class="tableheads">Season</th>
+            <th class="tableheads">Year</th>
+            <th class="tableheads">Experience</th>
+        </tr>
+    </thead>
+    <tbody id="saved-list">
+        {% for internship in internships %}
+        <tr data-tt="{{ internship.link }}">
+            <td>{{ internship.compName }}</td>
+            <td><a href="{{ internship.link }}">{{ internship.role }}</a></td>
+            <td>{{ internship.season }}</td>
+            <td>{{ internship.yr }}</td>
+            <td>{{ internship.experience }}</td>
+            <td><form class="favorite-form" method="post" action="/saved">
+                <label class="star">
+                    <i class="fa fa-star checked"> Remove</i>
+                    <!-- <input type="hidden" class="favbutton" value="0"> -->
+                </label>
+                <!-- <input type="submit" name="submit" value="favorite"/> -->
+              </form></td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+{% endblock %}

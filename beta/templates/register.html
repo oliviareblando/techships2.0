@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block main_content %}
+
+<form action="" method="post">
+    <div class="container">
+        <h1>Register</h1>
+        <p>Please fill out this form to create an account.</p>
+
+        <label><b>Username</b>
+        <input type="username" placeholder="Enter Username" name="username" required></label>
+        <br><br>
+        <label><b>Password</b>
+        <input type="password" placeholder="Enter Password" name="password" required></label>
+        <br><br>
+        <label><b>Email</b>
+        <input type="email" placeholder="Enter Email" name="email" required></label>
+        <br><br>
+        <label><b>School</b>
+        <input type="school" placeholder="Enter School" name="school"></label>
+        <br><br>
+        <div class="clearfix">
+            <button type="submit" class="signupbtn">Sign Up</button>
+        </div><br>
+        <label>
+            <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
+        </label>
+    </div>
+</form>
+
+{% endblock %}

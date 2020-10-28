@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block main_content %}
+<h1>Login</h1>
+
+<form action="" method="post">
+    <!-- <div class="imgcontainer">
+      <img src="img_avatar2.png" alt="Logo" class="logo">
+    </div> -->
+    <br> <br>
+    <div class="container">
+        <label><b>Username</b>
+        <input type="text" placeholder="Enter Username" name="username" required>
+        </label>
+        <br><br>
+        <label><b>Password</b>
+        <input type="password" placeholder="Enter Password" name="password" required>
+        </label>
+        <br><br>
+        <button type="submit">Login</button>
+        <br><br>
+        <label>
+            <input type="checkbox" checked="checked" name="remember"> Remember me
+        </label>
+    </div>
+
+    <!-- <div class="container" style="background-color:#f1f1f1">
+        <button type="button" class="cancelbtn">Cancel</button>
+        <span class="psw">Forgot <a href="#">password?</a></span>
+    </div> -->
+</form>
+
+{% endblock %}

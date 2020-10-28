@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block main_content %}
+
+<h1>{{comp}}</h1>
+
+<table class="center">
+    <thead>
+        <tr>
+            <th class="tableheads">Role</th>
+            <th class="tableheads">Season</th>
+            <th class="tableheads">Year</th>
+            <th class="tableheads">Experience</th>
+        </tr>
+    </thead>
+    <tbody>
+        <form method="post" action="" enctype="multipart/form-data">
+            <p><label>Pic: <input type="file" name="pic"></label></p>
+            <p><input type="submit" value="upload"></p>
+            <div><button type="submit" class="uploadbtn">Upload</button></div>
+        </form>
+        {% if nm != '' and src != '' %}
+            <p>Last upload: {{nm}}</p>
+            <p> <img src="{{src}}"></p>
+        {% endif %}
+        
+        {% for internship in internships %}
+        <tr>
+            <td><a href="{{ internship.link }}">{{internship.role }}</a></td>
+            <td>{{ internship.season }}</td>
+            <td>{{ internship.yr }}</td>
+            <td>{{ internship.experience }}</td>
+            <td><form class="favorite-form" method="post" action="/favorite">
+                <input type="submit" name="submit" value="favorite" />
+              </form></td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+{% endblock %}
